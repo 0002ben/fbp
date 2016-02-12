@@ -24,10 +24,11 @@ SECRET_KEY = '0oou8ng4_qdj9$^s^v+$6czi(n_nge^y_sgo#=jl%@*8g*_c3a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
-#ALLOWED_HOSTS = []
 DEBUG = False
+ALLOWED_HOSTS = ['softreg.pythonanywhere.com']
+#DEBUG = False
 #ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+#ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -80,33 +81,12 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'fbp_dev',
-        'USER': 'userFBP',
-        'PASSWORD': 'us3rF8P01',
-        'HOST': 'mysql-dv.chseprh77ml6.us-west-2.rds.amazonaws.com',
-        'PORT': '3306',
-    }
-}
-'''
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'fbp_dev',
-        'USER': 'root',
+        'NAME': 'softreg$fbp_dev',
+        'USER': 'softreg',
         'PASSWORD': 'admin01',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'HOST': 'softreg.mysql.pythonanywhere-services.com',
     }
 }
-'''
-''' Original conf
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-'''
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
@@ -145,5 +125,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+#STATIC_ROOT = '/home/softreg/fbp/static'
 
 ADMIN_SITE_HEADER = 'Fair Business Practices (FBP) - Administration'

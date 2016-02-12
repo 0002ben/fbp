@@ -4,4 +4,4 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-	return HttpResponse("Hello world.  You're in the FBP index.")
+	return HttpResponse("You're in the FBP index.")
